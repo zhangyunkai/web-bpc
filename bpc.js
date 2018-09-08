@@ -53,7 +53,7 @@
         var array = [];
         var bitarray = [];
         var pm = 0;
-        if (hour >= 13) {
+        if (hour >= 12) {
             hour -= 12;
             pm = 1;
         }
@@ -273,7 +273,7 @@
                 else if (signal[i] < 0.35) ctx2d.fillStyle = "#7F7F7F";
                 else ctx2d.fillStyle = "#007F00";
             }
-            ctx2d.fillRect((i % 20) * 30, Math.floor(i / 20) * 80, 30 * signal[i] * 2, 60);
+            ctx2d.fillRect((i % 20) * 30 + 30 * signal[i] , Math.floor(i / 20) * 80, 30-30 * signal[i], 60);
         }
         requestAnimationFrame(render);
     }
